@@ -20,29 +20,26 @@
     <title>Workout Log</title>
   </head>
   <body>
-
     <nav class="navbar">
-        <div class="inner-nav">
-          <div><i class="fas fa-dumbbell"></i> Workout Log</div>
-        </div>
-      </nav>
+      <div class="inner-nav">
+        <div><i class="fas fa-dumbbell"></i> Workout Log</div>
+      </div>
+    </nav>
     <main>
-  
+      <div class="workout-form">
+        <form class="form">
+          Time spent:
+          <input class="time" type="number" data-time-input /> Workout:
+          <input class="workout" type="text" data-workout-input /> Date:
+          <input class="date" type="date" data-date />
 
-        <div class="workout-form">
+          <button class="form-button" data-form-button>Add</button>
+        </form>
+      </div>
 
-            <form class="form">
-
-                Time spent: <input  class="time" type="number" data-time-input/>
-                Workout: <input class="workout" type="text" data-workout-input/>
-                Date: <input class="date" type="date" data-date/>
-
-                <button class="form-button" data-form-button>Add</button>
-            </form>
-
-        </div>
-
+      <div data-teste></div>
     </main>
 
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
