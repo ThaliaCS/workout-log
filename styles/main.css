@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;  
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    color: #fff;
+    background-color: #141115;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
+}
+.inner-nav {
+
+    display: flex;
+    width: 80vw;
+}
+
+.inner-nav i {
+    margin: 5px;
+}
