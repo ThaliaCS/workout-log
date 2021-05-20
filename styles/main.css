@@ -4,6 +4,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
+main {
+
+    height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
 .navbar {
     color: #fff;
     background-color: #141115;
@@ -22,5 +31,36 @@
 }
 
 .inner-nav i {
-    margin: 5px;
+    margin: 7px;
+}
+
+.workout-form form{
+    
+    background-color: #eeeeee;
+    display: flex;
+    padding: 20px;
+    border-radius: 7px;
+    border:  1px #141115 solid;
+    flex-direction: column;
+}
+
+.time, .workout{
+    width: 40%;
+}
+
+.form-button {
+
+    cursor: pointer;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 40%;
+    color: #fff;
+    background-color: #34973f;
+}
+
+.form-button:hover {
+
+    background-color: #256b2d;
 }
