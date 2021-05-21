@@ -2,20 +2,23 @@ const createLog = (event) => {
   event.preventDefault();
   const array = [];
 
+  const time = document.querySelector("#time-input");
+  const workout = document.querySelector("#workout-input");
+  const date = document.querySelector("#date-input");
   const teste = document.querySelector("[data-teste]");
-  const time = document.querySelector("[data-time-input]");
-  array.push(time.value);
 
-  const workout = document.querySelector("[data-workout-input]");
-  array.push(workout.value);
+  const item = {
+    workout: workout.value,
+    date: date.value,
+    time: time.value,
+  }
 
-  const date = document.querySelector("[data-date]");
-  array.push(date.value);
+  array.push(item);
+  let l = array.length;
 
   const table = document.createElement("p");
 
-  //Somete printando em um p para visualizar
-  const conteudo = `<p>${array}</p>`;
+  const conteudo = `<p>${array[l - 1].date}</p>`;
   console.log(array);
 
   table.innerHTML = conteudo;
@@ -23,6 +26,6 @@ const createLog = (event) => {
  
 };
 
-const addWorkout = document.querySelector("[data-form-button]");
+const addWorkout = document.querySelector("#form-button");
 
 addWorkout.addEventListener("click", createLog);
