@@ -28,18 +28,46 @@
     <main>
       <div class="workout-form">
         <form class="form">
-          Time spent:
-          <input class="time" type="number" data-time-input /> Workout:
-          <input class="workout" type="text" data-workout-input /> Date:
-          <input class="date" type="date" data-date />
+          <label>
+            Time:
+            <input
+               minlength="2"
+              required
+              class="time"
+              type="number"
+              id="time-input"
+              
+            >
+          </label>
+          <label>
+            Workout:
 
-          <button class="form-button" data-form-button>Add</button>
+            <select id="workout-input">
+              <option class="option">Run  🏃</option>
+              <option class="option">Swimming 🏊🏼</option>
+              <option class="option">Walk 🚶‍♀️</option>
+              <option class="option">Pushup 💪</option>
+              <option class="option">ABS</option>
+              <option class="option">Squat 🦵</option>
+            </select>
+          </label>
+          Date:
+          <input required class="date" type="date" id="date-input" />
+
+          <button class="form-button" id="form-button">
+            Add
+          </button>
         </form>
       </div>
-
-      <div data-teste></div>
+      <div class="workout-table">
+        <table class="table" id="table">
+          <ul id="list"></ul>
+        </table>
+        
+      </div>
+      <div id="total-time"></div>
     </main>
 
-    <script src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
