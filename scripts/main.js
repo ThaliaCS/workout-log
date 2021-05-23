@@ -60,7 +60,6 @@ function createWorkoutLog(event) {
                         <td>${time}h</td>
                         <td>${workout}</td>
                         <td>${date}</td>
-
                     </tr>`;
 
   const table = document.querySelector("#table");
