@@ -57,7 +57,9 @@ function increaseTotalTime(time) {
 }
 
 function decreaseTotalTime(time) {
-  totalTime -= parseInt(time);
+
+  
+  totalTime -= parseInt(time.replace('h', ''));
   updateTotalTime(totalTime);
 }
 
@@ -72,18 +74,30 @@ function createWorkoutLog(event) {
 
   increaseTotalTime(time);
 
-  const content = `<tr class="item">
-                        <td>${time}h</td>
-                        <td>${workout}</td>
-                        <td>${date}</td>
-
-                    </tr>`;
+  const content = `<tr class="item"><td>${time}h</td><td>${workout}</td><td>${date}</td></tr>`;
 
   const table = document.querySelector("#table");
 
   const tableRow = table.insertRow();
   tableRow.innerHTML = content;
-  //tableRow.appendChild(DeleteButton());
+
+  tableRow.appendChild(DeleteButton(deleteWorkout));
+}
+
+function deleteWorkout(event){
+
+    const deleteWorkoutButton = event.target;
+
+    const workoutRowToDelete = deleteWorkoutButton.parentElement;
+
+    const timeToDecrease = workoutRowToDelete.firstChild.innerHTML;
+
+    decreaseTotalTime(timeToDecrease);
+
+    workoutRowToDelete.remove();
+
+    return deleteWorkout;
+ 
 }
 
 const addWorkout = document.querySelector("#form-button");
