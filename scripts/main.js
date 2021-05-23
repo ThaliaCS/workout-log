@@ -56,13 +56,6 @@ function createWorkoutLog(event) {
     return;
   }
 
-  totalTime += parseInt(time);
-  console.log(totalTime);
-
-  const totalTimeDiv = document.querySelector("#total-time");
-  const contentTotalTime = `<p>${totalTime} hours of exercise </p>`
-  totalTimeDiv.innerHTML = contentTotalTime;
-  
   const content = `<tr class="item">
                         <td>${time}h</td>
                         <td>${workout}</td>
