@@ -25,8 +25,7 @@ const getWorkoutData = () => {
   const data = {};
   fields.forEach((field) => {
     const element = document.querySelector(`#${field.id}`);
-    if(element !== null){
-   
+    if (element !== null) {
       data[field.name] = element.value;
     }
   });
@@ -46,15 +45,32 @@ function initializeWorktouTable() {
   workoutTable.innerHTML = `<tr class="table-headers">${tableHeaders}</tr>`;
 }
 
-function createWorkoutLog(event) {
+function updateTotalTime(totalTime) {
+  const totalTimeDiv = document.querySelector("#total-time");
+  const contentTotalTime = `<p>${totalTime} hours of exercise </p>`;
+  totalTimeDiv.innerHTML = contentTotalTime;
+}
 
+function increaseTotalTime(time) {
+  totalTime += parseInt(time);
+  updateTotalTime(totalTime);
+}
+
+function decreaseTotalTime(time) {
+  totalTime -= parseInt(time);
+  updateTotalTime(totalTime);
+}
+
+function createWorkoutLog(event) {
   event.preventDefault();
 
   const { time, workout, date } = getWorkoutData();
 
-  if(time == "" || date == ""){
+  if (time == "" || date == "") {
     return;
   }
+
+  increaseTotalTime(time);
 
   const content = `<tr class="item">
                         <td>${time}h</td>
