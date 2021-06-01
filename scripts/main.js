@@ -1,4 +1,4 @@
-import DeleteButton from "./deleteWorkout.js";
+//import DeleteButton from "./deleteWorkout.js";
 
 const fields = [
   {
@@ -25,7 +25,7 @@ const getWorkoutData = () => {
   const data = {};
   fields.forEach((field) => {
     const element = document.querySelector(`#${field.id}`);
-    if(element !== null){
+    if(element){
    
       data[field.name] = element.value;
     }
@@ -36,12 +36,9 @@ const getWorkoutData = () => {
 
 function initializeWorktouTable() {
   const workoutTable = document.querySelector("#table");
-  let tableHeaders = "";
-
-  fields.forEach((field) => {
-    const tableHeader = `<th>${field.name}</th>`;
-    tableHeaders += tableHeader;
-  });
+ 
+  const tableHeaders = fields.reduce((tableHeaders, field) => `${tableHeaders}
+  <th>${field.name}</th>`, "");
 
   workoutTable.innerHTML = `<tr class="table-headers">${tableHeaders}</tr>`;
 }
@@ -52,7 +49,7 @@ function createWorkoutLog(event) {
 
   const { time, workout, date } = getWorkoutData();
 
-  if(time == "" || date == ""){
+  if(!time || !date){
     return;
   }
 
